@@ -1,124 +1,103 @@
-# SYNTH-01 // BIOPHONIC CONSCIOUSNESS
-### Cybernetic Diagnostic HUD & Neural Uplink Interface
+# 🤖 SYNTH-01 // DIAGNOSTIC HUD
 
-[![Status: Operational](https://img.shields.io/badge/System_Status-Operational-0ae8e0?style=flat-square&logo=cpu&logoColor=0ae8e0)](https://github.com/)
-[![React Version: ^19.2.7](https://img.shields.io/badge/React-v19.2.7-20232a?style=flat-square&logo=react)](https://react.dev/)
-[![Tailwind CSS: v4](https://img.shields.io/badge/Tailwind_CSS-v4.0-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![Vite Version: ^8.1.1](https://img.shields.io/badge/Vite-v8.1.1-646cff?style=flat-square&logo=vite)](https://vite.dev/)
+```text
+┌────────────────────────────────────────────────────────┐
+│  SYNTH-01 : COGNITIVE DIAGNOSTIC HUD & NEURAL UPLINK   │
+│  Version: 1.0.0-beta      Status: Operational [200 OK] │
+└────────────────────────────────────────────────────────┘
+```
 
-**SYNTH-01** is a high-fidelity, single-page cyborg-themed landing page representing a futuristic diagnostic Heads-Up Display (HUD). Built using a cutting-edge frontend stack (React 19, Vite, Tailwind CSS v4, React Three Fiber, and GSAP), the application simulates a real-time biophonic consciousness telemetry terminal.
-
----
-
-## 🖥️ System Showcase
-
-Below is the active biophonic core overview displaying system synchronization status and the interactive 3D neural mesh:
-
-![SYNTH-01 Hero Interface](docs/hero-dashboard.png)
+An interactive, premium terminal-inspired diagnostic HUD landing page built for simulating real-time biophonic telemetry. Powered by **React 19**, **Tailwind CSS v4**, **Vite**, **React Three Fiber (Three.js)**, and **GSAP**.
 
 ---
 
-## ⚡ Core Capabilities
+## 🖥️ System Preview
 
-- 🌀 **Boot Sequencer & Memory Decognizer:** A simulated diagnostic loading screen checking subsystem indexes, bios-level processes, and synapse links up to 100% prior to entering the console.
-- 📐 **Interactive 3D Neural Mesh:** A fully interactive, responsive Three.js canvas utilizing `@react-three/fiber` and `@react-three/drei` rendering an orbiting wireframe mesh that users can drag and inspect.
-- 📺 **HUD CRT Simulation Overlay:** Retro scanlines and a linear CRT scan texture overlaying the screen to emphasize the cybernetic console aesthetic.
-- 📊 **Subsystem Telemetry Grid:** Status readouts, neon telemetry gauges, and micro-led pulse animations highlighting system health, CPU load, latency, and core temperatures.
-- 📡 **Live Neural Log Feed:** A real-time system log simulating diagnostic updates on connection stability, kernel logs, and bios integrations, managed via high-performance GSAP timelines.
-- ✉️ **Secure Uplink Transmitter:** An interactive diagnostic contact form equipped with glowing input states, sending messages that return real-time database write updates and system validation headers (`STATUS: 200 OK`).
+Below is the active biophonic core interface showcasing the interactive 3D neural mesh and real-time telemetry readout:
+
+![SYNTH-01 System Interface](docs/hero-dashboard.png)
 
 ---
 
-## 🎬 Interactive Walkaround Demo
+## 🎬 Terminal Walkaround Session
 
-Watch the complete interactive boot sequence, HUD panel transitions, subsystem glows, and uplink submission form in action:
+Watch the boot sequence loader reaching 100%, page transitions, hover states, and live telemetry forms in action:
 
-![Interactive Walkaround](docs/walkaround-demo.webp)
-
----
-
-## 🛠️ Tech Stack & Dependencies
-
-* **Framework:** React 19 + Vite (High-performance hot module replacement)
-* **Styling & Themes:** Tailwind CSS v4 (configured via `@theme` utility tokens in pure CSS)
-* **3D Engine:** Three.js / React Three Fiber / @react-three/drei
-* **Animations:**
-  * **GSAP (GreenSock):** Complex sequential logs and system tick intervals
-  * **Framer Motion:** Smooth boot sequence fade-outs and page transitions
-  * **Anime.js / CSS Keyframes:** Micro-LED pulses and scanline behaviors
+![System Walkaround Demonstration](docs/walkaround-demo.webp)
 
 ---
 
-## 📂 Project Directory Anatomy
+## ⚡ System Commands
+
+To bootstrap, compile, or audit the terminal, execute the following commands in your shell:
+
+```bash
+# Clone the system core
+❯ git clone https://github.com/darshsharma-bit/cyborg-theme.git
+❯ cd cyborg-theme
+
+# Initialize environment dependencies
+❯ npm install
+
+# Boot development environment (Local: http://localhost:5173 or 5174)
+❯ npm run dev
+
+# Audit system logic using oxlint
+❯ npm run lint
+
+# Compile production-ready telemetry distribution
+❯ npm run build
+```
+
+---
+
+## 🛠️ Telemetry Specifications
+
+| System Sub-Module | Engine / Stack | Performance Impact |
+| :--- | :--- | :--- |
+| **3D Neural Mesh** | Three.js + R3F + Drei | Low (GPU Accelerated Orbit controls) |
+| **Core Boot Sequence** | Framer Motion | Smooth 60FPS exit transition |
+| **Telemetry Ticker Log** | GSAP Timelines | Optimized micro-tick log output |
+| **HUD Grid Panels** | Tailwind CSS v4 | Zero runtime overhead (Utility compiler) |
+| **Secure Broadcast** | React Hooks + State | Client-validated transmission packets |
+
+---
+
+## 📂 System File Tree
 
 ```text
 cyborg-theme/
 ├── .vscode/
-│   └── settings.json         # Workspace CSS validator bypass for Tailwind v4
+│   └── settings.json         # Workspace CSS validator custom at-rule bypass
 ├── docs/
-│   ├── hero-dashboard.png    # Showcase screenshot
-│   └── walkaround-demo.webp  # WebP walkthrough demonstration recording
+│   ├── hero-dashboard.png    # Live interface overview image
+│   └── walkaround-demo.webp  # Interactive walkthrough animation
 ├── public/
-│   ├── favicon.svg           # Custom cyborg system icon
-│   └── icons.svg             # SVG icon spritesheet
-├── src/
-│   ├── animations/
-│   │   └── gsapTimelines.js  # GSAP ticker setups and logger controls
-│   ├── components/
-│   │   ├── BootSequence/     # System initializer boot-up screen
-│   │   ├── Hero3D/           # 3D interactive mesh scene
-│   │   ├── CoreSpec/         # System structural data grid
-│   │   ├── ModuleGrid/       # Neon metrics telemetry panels
-│   │   ├── NeuralLog/        # Dynamic diagnostic logging feed
-│   │   ├── UplinkSignal/     # Transmission monitoring graphs
-│   │   ├── TransmitForm/     # Broadcast contact form
-│   │   └── Footer/           # Terminal console status footer
-│   ├── styles/
-│   │   ├── tokens.css        # Raw custom hex color tokens and variables
-│   │   └── globals.css       # Core Tailwind CSS imports and @theme configurations
-│   ├── App.jsx               # Entry router and layout coordinator
-│   └── main.jsx              # DOM bootstrapper
-├── vite.config.js            # Tailwind v4 plugin compilation config
-├── package.json              # System configuration and script registry
-└── README.md                 # System overview manual
+│   └── favicon.svg           # Custom system core icon
+└── src/
+    ├── animations/
+    │   └── gsapTimelines.js  # GSAP ticker setups and logger controls
+    ├── components/
+    │   ├── BootSequence/     # System initializer boot-up screen
+    │   ├── Hero3D/           # 3D interactive mesh scene
+    │   ├── CoreSpec/         # System structural data grid
+    │   ├── ModuleGrid/       # Neon metrics telemetry panels
+    │   ├── NeuralLog/        # Dynamic diagnostic logging feed
+    │   ├── UplinkSignal/     # Transmission monitoring graphs
+    │   ├── TransmitForm/     # Broadcast contact form
+    │   └── Footer/           # Terminal console status footer
+    ├── styles/
+    │   ├── tokens.css        # Raw custom hex color tokens and variables
+    │   └── globals.css       # Core Tailwind CSS imports and @theme configurations
+    ├── App.jsx               # Entry router and layout coordinator
+    └── main.jsx              # DOM bootstrapper
 ```
 
 ---
 
-## 🚀 Installation & Local Execution
+## ⚙️ Tailwind CSS v4 Theme Integration
 
-To run the terminal interface locally:
-
-### 1. Clone & Install Dependencies
-Ensure you have Node.js installed on your system. Run:
-```bash
-# Clone the repository
-git clone https://github.com/your-username/cyborg-theme.git
-
-# Navigate into the project directory
-cd cyborg-theme
-
-# Install packages
-npm install
-```
-
-### 2. Run the Development Server
-```bash
-npm run dev
-```
-The application will spin up on `http://localhost:5173/` (or `http://localhost:5174/` if 5173 is occupied).
-
-### 3. Build for Production
-To build a highly optimized distribution bundle:
-```bash
-npm run build
-```
-
----
-
-## ⚙️ Tailwind CSS v4 Customization
-
-This project uses the modern **Tailwind CSS v4** styling framework. All design system configurations are managed inside [src/styles/globals.css](src/styles/globals.css) via the new `@theme` directive, linking to CSS variables declared in [src/styles/tokens.css](src/styles/tokens.css):
+Tailwind v4 handles custom styling tokens directly within your CSS file ([src/styles/globals.css](src/styles/globals.css)) using the `@theme` directive, linking parameters to CSS variables inside [src/styles/tokens.css](src/styles/tokens.css):
 
 ```css
 @theme {
@@ -132,7 +111,8 @@ This project uses the modern **Tailwind CSS v4** styling framework. All design s
 }
 ```
 
-If your IDE reports linting issues under the `@theme` directive, check the `.vscode/settings.json` file which bypasses the built-in validator:
+### 🔧 IDE warning resolution
+If your editor complains about `@theme` being an unknown at-rule, we solved it by adding the following to [.vscode/settings.json](.vscode/settings.json):
 ```json
 {
   "css.lint.unknownAtRules": "ignore"
@@ -141,4 +121,6 @@ If your IDE reports linting issues under the `@theme` directive, check the `.vsc
 
 ---
 
-*SYNTH-01 // COGNITIVE INTEGRITY IS GUARANTEED*
+```text
+[ SYSTEM STATUS: READY ] ─── [ CONNECTION: SECURE ] ─── [ CORE: CALIBRATED ]
+```
