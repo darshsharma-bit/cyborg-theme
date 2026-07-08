@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Tailwind CSS v4 Theme Configurations */
+@theme {
+  --color-void-black: var(--void-black);
+  --color-gunmetal: var(--gunmetal);
+  --color-chrome: var(--chrome);
+  --color-signal-cyan: var(--signal-cyan);
+  --color-warning-amber: var(--warning-amber);
+  --color-vein-red: var(--vein-red);
+  --color-glass-overlay: var(--glass-overlay);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  --shadow-glow-cyan: var(--glow-cyan);
+  --shadow-glow-amber: var(--glow-amber);
+  --shadow-glow-red: var(--glow-red);
+}
+
+/* Base resets & HUD styling */
+@layer base {
+  body {
+    background-color: var(--void-black);
+    color: var(--chrome);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  /* Accessible outline focus states for keyboard users */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--signal-cyan);
+    outline-offset: 4px;
+    box-shadow: var(--glow-cyan);
+  }
+
+  /* Custom styled scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--void-black);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gunmetal);
+    border: 1px solid var(--signal-cyan);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--signal-cyan);
+    box-shadow: var(--glow-cyan);
+  }
+}
+
+/* Utilities for HUD / Cyborg Aesthetics */
+
+/* Animated CRT scanning line */
+.hud-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to bottom,
+    rgba(77, 232, 224, 0) 0%,
+    rgba(77, 232, 224, 0.4) 50%,
+    rgba(77, 232, 224, 0) 100%
+  );
+  opacity: 0.3;
+  animation: scanline-run 10s linear infinite;
+  pointer-events: none;
+  z-index: 40;
+}
+
+@keyframes scanline-run {
+  0% {
+    transform: translateY(-10vh);
+  }
+  100% {
+    transform: translateY(110vh);
+  }
+}
+
+/* Screen CRT grid texture */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.04));
+  background-size: 100% 4px, 6px 100%;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+/* Glitch animation utility */
+@keyframes glitch-flicker {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  60% {
+    clip-path: inset(80% 0 5% 0);
+  }
+  80% {
+    clip-path: inset(11% 0 75% 0);
+  }
+  100% {
+    clip-path: inset(62% 0 30% 0);
+  }
+}
+
+.glitch-active {
+  animation: glitch-flicker 1s linear infinite alternate-reverse;
+}
+
+/* Micro-animations */
+@keyframes pulse-cyan {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: 0 0 5px rgba(77, 232, 224, 0.2);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(77, 232, 224, 0.6);
+  }
+}
+
+.pulse-led-cyan {
+  animation: pulse-cyan 2s infinite;
+}
+
+@keyframes pulse-amber {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: 0 0 5px rgba(255, 122, 61, 0.2);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 122, 61, 0.6);
+  }
+}
+
+.pulse-led-amber {
+  animation: pulse-amber 2s infinite;
+}
+
+/* Custom Corner Bracket Elements */
+.hud-corner-tl::before, .hud-corner-tl::after,
+.hud-corner-tr::before, .hud-corner-tr::after,
+.hud-corner-bl::before, .hud-corner-bl::after,
+.hud-corner-br::before, .hud-corner-br::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--signal-cyan);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.hud-corner-tl::before { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.hud-corner-tr::before { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.hud-corner-bl::before { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.hud-corner-br::before { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+/* Bleed effects for HUD elements */
+.bleed-left {
+  margin-left: -2rem;
+  padding-left: 2rem;
+}
+.bleed-right {
+  margin-right: -2rem;
+  padding-right: 2rem;
+}

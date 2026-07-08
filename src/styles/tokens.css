@@ -1,0 +1,23 @@
+:root {
+  /* Design System Color Tokens */
+  --void-black: #0A0B0D;
+  --gunmetal: #14161A;
+  --chrome: #C8CDD3;
+  --signal-cyan: #4DE8E0;
+  --warning-amber: #FF7A3D;
+  --vein-red: #E8384F;
+  --glass-overlay: rgba(200, 205, 211, 0.06);
+
+  /* Typography Fonts */
+  --font-display: 'Chakra Petch', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Glow Filters & Box Shadows */
+  --glow-cyan: 0 0 12px rgba(77, 232, 224, 0.5), 0 0 24px rgba(77, 232, 224, 0.2);
+  --glow-amber: 0 0 12px rgba(255, 122, 61, 0.5), 0 0 24px rgba(255, 122, 61, 0.2);
+  --glow-red: 0 0 12px rgba(232, 56, 79, 0.5), 0 0 24px rgba(232, 56, 79, 0.2);
+  --glow-cyan-text: 0 0 8px rgba(77, 232, 224, 0.6);
+  --glow-amber-text: 0 0 8px rgba(255, 122, 61, 0.6);
+  --glow-red-text: 0 0 8px rgba(232, 56, 79, 0.6);
+}
