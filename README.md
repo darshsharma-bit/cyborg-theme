@@ -1,126 +1,142 @@
-# 🤖 SYNTH-01 // DIAGNOSTIC HUD
+<div align="center">
 
-```text
-┌────────────────────────────────────────────────────────┐
-│  SYNTH-01 : COGNITIVE DIAGNOSTIC HUD & NEURAL UPLINK   │
-│  Version: 1.0.0-beta      Status: Operational [200 OK] │
-└────────────────────────────────────────────────────────┘
-```
+# SYNTH-01 // Diagnostic HUD
+*A high-fidelity cyborg-themed diagnostic HUD landing page and neural uplink terminal.*
 
-An interactive, premium terminal-inspired diagnostic HUD landing page built for simulating real-time biophonic telemetry. Powered by **React 19**, **Tailwind CSS v4**, **Vite**, **React Three Fiber (Three.js)**, and **GSAP**.
+[![React](https://img.shields.io/badge/React-19.2.7-20232a?style=flat-square&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8.1.1-646cff?style=flat-square&logo=vite)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.0.0-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-0.185.1-black?style=flat-square&logo=three.js)](https://threejs.org/)
+[![GSAP](https://img.shields.io/badge/GSAP-3.15.0-green?style=flat-square&logo=greensock)](https://greensock.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
----
+<br />
 
-## 🖥️ System Preview
+<img src="docs/hero-dashboard.png" width="850" alt="SYNTH-01 System Interface Dashboard" />
 
-Below is the active biophonic core interface showcasing the interactive 3D neural mesh and real-time telemetry readout:
-
-![SYNTH-01 System Interface](docs/hero-dashboard.png)
-
----
-
-## 🎬 Terminal Walkaround Session
-
-Watch the boot sequence loader reaching 100%, page transitions, hover states, and live telemetry forms in action:
-
-![System Walkaround Demonstration](docs/walkaround-demo.webp)
+</div>
 
 ---
 
-## ⚡ System Commands
+## Overview
 
-To bootstrap, compile, or audit the terminal, execute the following commands in your shell:
-
-```bash
-# Clone the system core
-❯ git clone https://github.com/darshsharma-bit/cyborg-theme.git
-❯ cd cyborg-theme
-
-# Initialize environment dependencies
-❯ npm install
-
-# Boot development environment (Local: http://localhost:5173 or 5174)
-❯ npm run dev
-
-# Audit system logic using oxlint
-❯ npm run lint
-
-# Compile production-ready telemetry distribution
-❯ npm run build
-```
+SYNTH-01 is a premium, single-page interactive portfolio and diagnostic HUD simulation. The project replicates a futuristic cybernetic interface using React, React Three Fiber, GSAP, and Tailwind CSS v4.
 
 ---
 
-## 🛠️ Telemetry Specifications
+## Demo
 
-| System Sub-Module | Engine / Stack | Performance Impact |
+<div align="center">
+  <img src="docs/walkaround-demo.webp" width="850" alt="HUD Interface Walkaround" />
+  <p><em>Demonstration: Boot sequence initialization → 3D model interaction → GSAP scroll-triggered sections → network-tethered contact form submission.</em></p>
+</div>
+
+---
+
+## Features
+
+- **Interactive 3D Core Model:** Procedural mechanical cranium wireframe built in Three.js (R3F) featuring orbital drag-to-inspect interaction with rotation persistence.
+- **Boot Sequencer & Initializer:** Simulated BIOS diagnostics loading animation transitioning to the main dashboard interface.
+- **GSAP Scroll Timelines:** Linear chronologies, scroll-triggered log tick feeds, and telemetry section animations.
+- **Uplink Network Transmitter:** Interactive email transmitter form utilizing real HTTP POST requests to `https://httpbin.org/post` with log status diagnostics.
+- **Mobile Fallback & Accessibility:** Automatic viewport detection displaying static vector SVG blueprint schematics on mobile devices to prevent GPU load, with built-in reduced-motion support.
+
+---
+
+## Tech Stack
+
+| Dependency | Version | Purpose |
 | :--- | :--- | :--- |
-| **3D Neural Mesh** | Three.js + R3F + Drei | Low (GPU Accelerated Orbit controls) |
-| **Core Boot Sequence** | Framer Motion | Smooth 60FPS exit transition |
-| **Telemetry Ticker Log** | GSAP Timelines | Optimized micro-tick log output |
-| **HUD Grid Panels** | Tailwind CSS v4 | Zero runtime overhead (Utility compiler) |
-| **Secure Broadcast** | React Hooks + State | Client-validated transmission packets |
+| **React** | `19.2.7` | UI Framework |
+| **Vite** | `8.1.1` | Build Toolchain |
+| **Tailwind CSS** | `4.3.2` | Core Styles & Variables |
+| **Three.js** | `0.185.1` | 3D Graphics Core |
+| **React Three Fiber** | `9.6.1` | R3F Wrapper |
+| **@react-three/drei** | `10.7.7` | R3F Helpers (Sparkles) |
+| **React Spring (Three/Web)**| `10.1.2` | Drag Rotation Physics |
+| **GSAP** | `3.15.0` | Scroll-Triggered Timelines |
+| **Anime.js** | `3.2.2` | Background SVG Nodes Loop |
+| **Motion** | `12.42.2` | Layout & Boot Transitions |
 
 ---
 
-## 📂 System File Tree
+## Typography
+
+The project utilizes three distinct font families loaded via Google Fonts link:
+* **Display Font (`Chakra Petch`):** A geometric, square-cut display typeface used for all main section headings to establish the mechanical theme.
+* **Body Font (`IBM Plex Sans`):** A legible humanist sans-serif face ensuring high readability for paragraphs and descriptions.
+* **Monospace Font (`Space Mono`):** A monospaced coding font utilized for telemetry readouts, terminal labels, and system logs.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js >= 18.0.0
+- npm >= 9.0.0
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/darshsharma-bit/cyborg-theme.git
+   cd cyborg-theme
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Build the application for production:
+   ```bash
+   npm run build
+   ```
+
+5. Run linters:
+   ```bash
+   npm run lint
+   ```
+
+---
+
+## Project Structure
 
 ```text
 cyborg-theme/
 ├── .vscode/
-│   └── settings.json         # Workspace CSS validator custom at-rule bypass
+│   └── settings.json         # CSS validator configuration for Tailwind CSS v4
 ├── docs/
-│   ├── hero-dashboard.png    # Live interface overview image
+│   ├── hero-dashboard.png    # Live interface screenshot
 │   └── walkaround-demo.webp  # Interactive walkthrough animation
 ├── public/
-│   └── favicon.svg           # Custom system core icon
+│   └── favicon.svg           # Core HUD icon asset
 └── src/
     ├── animations/
-    │   └── gsapTimelines.js  # GSAP ticker setups and logger controls
+    │   └── gsapTimelines.js  # GSAP scroll triggers and logger feeds
     ├── components/
-    │   ├── BootSequence/     # System initializer boot-up screen
-    │   ├── Hero3D/           # 3D interactive mesh scene
-    │   ├── CoreSpec/         # System structural data grid
-    │   ├── ModuleGrid/       # Neon metrics telemetry panels
-    │   ├── NeuralLog/        # Dynamic diagnostic logging feed
-    │   ├── UplinkSignal/     # Transmission monitoring graphs
-    │   ├── TransmitForm/     # Broadcast contact form
-    │   └── Footer/           # Terminal console status footer
+    │   ├── BootSequence/     # Initializer loading screen
+    │   ├── Hero3D/           # Three.js viewport and SVG mobile fallback
+    │   ├── CoreSpec/         # System specifications list
+    │   ├── ModuleGrid/       # Grid of telemetry sensors
+    │   ├── NeuralLog/        # Scroll-driven timeline items
+    │   ├── UplinkSignal/     # Pulse telemetry panels
+    │   ├── TransmitForm/     # Network POST contact form
+    │   └── Footer/           # HUD status bar footer
     ├── styles/
-    │   ├── tokens.css        # Raw custom hex color tokens and variables
-    │   └── globals.css       # Core Tailwind CSS imports and @theme configurations
-    ├── App.jsx               # Entry router and layout coordinator
-    └── main.jsx              # DOM bootstrapper
+    │   ├── tokens.css        # Core color variables and font stacks
+    │   └── globals.css       # Tailwind directives and CSS theme overrides
+    ├── App.jsx               # Router and layout coordinator
+    └── main.jsx              # Main DOM entrypoint
 ```
 
 ---
 
-## ⚙️ Tailwind CSS v4 Theme Integration
+## Project Context
+This application was built as a final project submission for the IIT Bombay final-year showcase. 
 
-Tailwind v4 handles custom styling tokens directly within your CSS file ([src/styles/globals.css](src/styles/globals.css)) using the `@theme` directive, linking parameters to CSS variables inside [src/styles/tokens.css](src/styles/tokens.css):
-
-```css
-@theme {
-  --color-void-black: var(--void-black);
-  --color-signal-cyan: var(--signal-cyan);
-  --color-warning-amber: var(--warning-amber);
-  --color-vein-red: var(--vein-red);
-  
-  --font-display: var(--font-display);
-  --font-mono: var(--font-mono);
-}
-```
-
-### 🔧 IDE warning resolution
-If your editor complains about `@theme` being an unknown at-rule, we solved it by adding the following to [.vscode/settings.json](.vscode/settings.json):
-```json
-{
-  "css.lint.unknownAtRules": "ignore"
-}
-```
-
----
-
-```text
-[ SYSTEM STATUS: READY ] ─── [ CONNECTION: SECURE ] ─── [ CORE: CALIBRATED ]
-```
+Licensed under the [MIT License](LICENSE).
