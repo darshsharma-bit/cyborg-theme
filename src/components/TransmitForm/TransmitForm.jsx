@@ -42,28 +42,58 @@ export function TransmitForm() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (isSubmitting || isSuccess) return
 
     setIsSubmitting(true)
-    setStatusLogs(['>> INITIATING COMPRESSION PROTOCOL...', '>> ENCRYPTING PAYLOAD WITH QUANTUM SCHEME...'])
+    setStatusLogs([
+      '>> INITIATING COMPRESSION PROTOCOL...',
+      '>> ENCRYPTING PAYLOAD WITH QUANTUM SCHEME...',
+      '>> ESTABLISHING SECURE SATELLITE TETHER [IITB.GATEWAY]...'
+    ])
 
-    // Staggered terminal log outputs for mechatronics submission feel
-    setTimeout(() => {
-      setStatusLogs((prev) => [...prev, '>> ESTABLISHING SECURE SATELLITE TETHER [IITB.GATEWAY]...'])
-    }, 800)
+    try {
+      // Real fetch POST request to httpbin to verify network operations in browser
+      const response = await fetch('https://httpbin.org/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
 
-    setTimeout(() => {
-      setStatusLogs((prev) => [...prev, '>> CORRELATING SENSORY PACKETS...'])
-    }, 1500)
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
 
-    setTimeout(() => {
-      setStatusLogs((prev) => [...prev, '>> TRANSMISSION COMPLETE // STATUS: 200 OK'])
+      // Read real response
+      await response.json()
+
+      setTimeout(() => {
+        setStatusLogs((prev) => [...prev, '>> CORRELATING SENSORY PACKETS...'])
+      }, 700)
+
+      setTimeout(() => {
+        setStatusLogs((prev) => [
+          ...prev,
+          `>> SERVER RESPONDED // HOST: ${response.url.split('/')[2]}`,
+          `>> TRANSMISSION COMPLETE // STATUS: ${response.status} ${response.statusText}`
+        ])
+        setIsSubmitting(false)
+        setIsSuccess(true)
+        setFormData({ alias: '', address: '', data: '' })
+      }, 1500)
+
+    } catch (error) {
+      console.error('Uplink failed:', error)
+      setStatusLogs((prev) => [
+        ...prev,
+        `>> ERROR: UPLINK FAILED // ${error.message.toUpperCase()}`,
+        '>> ABORTING TRANSMISSION...'
+      ])
       setIsSubmitting(false)
-      setIsSuccess(true)
-      setFormData({ alias: '', address: '', data: '' })
-    }, 2400)
+    }
   }
 
   return (

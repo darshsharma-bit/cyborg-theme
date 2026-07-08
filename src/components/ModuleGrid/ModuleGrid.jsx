@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { HudPanel } from '../ui/HudPanel'
 import { Cpu, Eye, Activity, Radio } from 'lucide-react'
 import { startIdlePulse, startCircuitRotation } from '../../animations/animeSequences'

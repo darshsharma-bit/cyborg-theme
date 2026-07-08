@@ -126,15 +126,15 @@ export function Hero3D() {
 
           {/* Canvas Render with mobile degradation fallbacks */}
           {canvasLoaded ? (
-            <Suspense fallback={renderFallbackSchematic()}>
-              {isMobile ? (
-                // Mobile runs 3D with optimized fewer particle counts (50 sparkles)
-                <Hero3DScene particleCount={50} />
-              ) : (
-                // Desktop runs full 3D with 300 sparkles
+            isMobile ? (
+              // Mobile runs static SVG schematic fallback for lightweight performance
+              renderFallbackSchematic()
+            ) : (
+              <Suspense fallback={renderFallbackSchematic()}>
+                {/* Desktop runs full 3D with 300 sparkles */}
                 <Hero3DScene particleCount={300} />
-              )}
-            </Suspense>
+              </Suspense>
+            )
           ) : (
             renderFallbackSchematic()
           )}

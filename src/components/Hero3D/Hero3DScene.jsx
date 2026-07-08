@@ -128,8 +128,6 @@ export default function Hero3DScene({ particleCount = 200 }) {
 
   const handlePointerUp = () => {
     isDragging.current = false
-    // Snap back rotation to original diagnostic alignment
-    springApi.start({ rotation: [0, 0, 0] })
   }
 
   return (
